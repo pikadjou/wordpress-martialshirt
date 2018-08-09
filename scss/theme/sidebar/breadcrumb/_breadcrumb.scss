@@ -1,0 +1,19 @@
+#breadcrumb{
+    color: #798489;
+    @include xy-grid;
+    @include flex-align($y: middle);
+    a, span{
+        @include xy-cell("shrink", $gutters: 5px);
+        @include flex-align($y: middle);
+    }
+    a{
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: rem-calc(14);
+        border-radius: 20px;
+        color: $white;
+    }
+    span{
+        font-size: rem-calc(12);
+    }
+}

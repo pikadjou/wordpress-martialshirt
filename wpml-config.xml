@@ -1,0 +1,12 @@
+<wpml-config>
+	<admin-texts>
+		<key name="theme_mods_martialwc">
+			<key name="martialwc_logo"/>
+			<key name="martialwc_bar_text"/>
+			<key name="martialwc_payment_logo1"/>
+			<key name="martialwc_payment_logo2"/>
+			<key name="martialwc_payment_logo3"/>
+			<key name="martialwc_payment_logo4"/>
+		</key>
+	</admin-texts>
+</wpml-config>

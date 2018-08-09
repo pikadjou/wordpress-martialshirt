@@ -1,0 +1,43 @@
+.cart-container{
+    color: $white-color;
+    background-color: scale-color($color: $primary-color, $lightness: -30%);
+    cursor: pointer;
+    position: relative;
+    .cart-views{
+        @include xy-grid;
+        .cart-title{
+            @include xy-cell(9);
+            padding: 15px 0;
+        }
+        .cart-count{
+            @include xy-cell-base("auto");
+            border-left: 1px solid $primary-color;
+            text-align: center;
+            padding: 15px 0;
+        }
+    } 
+    .cart-overview{
+        display: none;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        width: 250%;
+        box-shadow: 0 0 2px 1px scale-color($color: $black-color, $lightness: 60%);
+        .widget{
+            margin: 0;
+        }
+    }
+
+    &.active{
+        .cart-views{
+            .cart-count{
+                background-color: $white-color;
+                color: $primary-color;
+                z-index: 1;
+            }
+        }
+        .cart-overview{
+            display: inline;
+        }
+    }
+}

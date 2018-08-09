@@ -1,0 +1,30 @@
+.single-product.woocommerce-page {
+    .product {
+        @include xy-grid;
+        .gallery{
+            @include xy-cell(6);
+        }
+        .content{
+            @include xy-cell(6);
+
+            .variations_form{
+                .values{
+                    @include xy-grid;
+                    margin: 0 -10px;
+                    .value{
+                        @include xy-cell-base("auto");
+                        padding: 0px 10px;
+                        select{
+                            width: 100%;
+                        }
+                    }
+                }
+                .quantity{
+                    & > label{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

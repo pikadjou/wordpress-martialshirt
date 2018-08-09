@@ -1,0 +1,13 @@
+.cart-validation{
+    .woocommerce-mini-cart__buttons{
+        @include flex;
+    }
+    a.button{
+        @include button-expand(true);
+        margin: 0;
+        &.checkout {
+            display: none;
+        }
+    }
+    
+}

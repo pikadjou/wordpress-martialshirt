@@ -1,0 +1,13 @@
+#main-menu{
+    li{
+        border-right: 1px solid #ECEFF1;
+    }
+    li:last-child{
+        border-right: none;
+    }
+    a{
+        color: #ECEFF1;
+        font-size: rem-calc(15px);
+        text-decoration: none;
+    }
+}

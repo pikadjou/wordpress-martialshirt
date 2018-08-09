@@ -1,0 +1,27 @@
+.cart_totals{
+    h2.widget-title{
+        display: none;
+    }
+    .shop_table{
+        padding: 20px;
+        @include xy-grid;
+        .key{
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .value{
+
+        }
+        .sub-info{
+            @include xy-cell("auto");
+            font-size: rem-calc(14);
+        }
+        .main-info{
+            text-align: right;
+            @include xy-cell("auto");
+        }
+    }
+    .checkout{
+        display: none;
+    }
+}

@@ -1,0 +1,9 @@
+#sidebar{
+    margin-top: -72px;
+
+    #nav-categories{
+        background: white;
+        box-shadow: 0 0 2px 1px scale-color($color: $black-color, $lightness: 60%);
+        padding: 10px;
+    }
+}

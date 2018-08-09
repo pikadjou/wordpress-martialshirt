@@ -1,0 +1,5 @@
+$header-padding: rem-calc(10px) !default;
+#masthead{
+    background-color: $primary-color;
+    padding: $header-padding;
+}

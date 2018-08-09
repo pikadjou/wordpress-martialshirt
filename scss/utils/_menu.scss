@@ -1,0 +1,24 @@
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;  
+    li{
+        padding: 0;
+        list-style-type: none;
+    }
+}
+ul.menu {
+    list-style-type: none;
+    &.horizontal{
+        @include xy-grid;
+        li{
+            @include xy-cell-base("auto");
+            a{
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                display: inline-block;
+            }
+        }
+    }
+}

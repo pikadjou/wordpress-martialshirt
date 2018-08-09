@@ -1,0 +1,17 @@
+{
+  "name": "martialshirt",
+  "version": "1.0.0",
+  "description": "MartialShirt Template WooCommerce",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/style.scss ./style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "author": "Geoffrey Lambert",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.8.3",
+    "nodemon": "^1.17.2"
+  }
+}

@@ -1,0 +1,23 @@
+.widget_product_categories{
+    li{
+        font-size: rem-calc(14);
+        font-weight: 300;
+        &.cat-parent{
+            font-size: rem-calc(14);
+            font-weight: 500;
+        }
+    }
+    a{
+        color:$black-color;
+        text-decoration: none;
+    }
+    
+    .children{
+        margin-left: 10px;
+    }
+    .current-cat-parent, .current-cat{
+        a{
+            color:$primary-color;
+        }
+    }
+}

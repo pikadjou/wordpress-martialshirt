@@ -1,0 +1,34 @@
+.woocommerce-mini-cart-item{
+    padding: 15px;
+    border-bottom: 1px solid #37474F;
+    @include xy-grid;
+    & > .thumbnail, & > .thumbnail-link{
+        @include xy-cell(3);
+        img{
+            width: auto !important;
+        }
+    }
+    .info{
+        @include xy-cell('auto');
+        @include xy-grid;
+        .product-name{
+            @include xy-cell(9);
+            font-weight: 500;
+        }
+        .unit-price{
+            @include xy-cell(3, $gutter-output : false, $gutters: 0);
+            text-align: right;
+        }
+        .meta-data{
+            @include xy-cell(4);
+            font-size: rem-calc(12);
+        }
+        .real-price{
+            @include xy-cell(3);
+        }
+        .quantity{
+            @include xy-cell('auto');
+        }
+    }
+    
+}

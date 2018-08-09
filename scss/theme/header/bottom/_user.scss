@@ -1,0 +1,35 @@
+.user-wrapper{
+    position: relative;
+    .user-target{
+        position: relative;
+        text-align: center;
+        padding: 10px;
+        color: $white-color;
+        &:hover{
+            color: $primary-color;
+            background-color: $white-color;
+        }
+    }
+
+    .user-content{
+        display: none;
+        position: absolute;
+        right: 0;
+        width: 200%;
+        background-color: $white-color;
+        padding: 20px;
+        color: $black-color;
+        box-shadow: 0 0 2px 1px scale-color($color: $black-color, $lightness: 60%);
+    }
+
+    &.active{
+        .user-target{
+            z-index: 1;
+            color: $primary-color;
+            background-color: $white-color;
+        }
+        .user-content{
+            display: inline;
+        }
+    }
+}

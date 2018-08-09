@@ -1,0 +1,12 @@
+.products {
+    @include xy-grid;
+    .product{
+        @include xy-cell(3);
+        padding: 5px 0;
+    }
+}
+
+.price{
+    color: $primary-color;
+    font-weight: 500;
+}

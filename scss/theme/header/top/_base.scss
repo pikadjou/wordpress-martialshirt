@@ -1,0 +1,11 @@
+.top-header-wrapper{
+    padding: 10px 10px 25px 10px;
+    @include xy-grid;
+    @include flex-align($y: middle);
+    .title-container{
+        @include xy-cell(7);
+    }
+    .menu-container{
+        @include xy-cell(5);
+    }
+}

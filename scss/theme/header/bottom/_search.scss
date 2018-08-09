@@ -1,0 +1,13 @@
+.header-search-box{
+    form{
+        @include xy-grid;
+        input{
+            @include xy-cell(11, $gutter-output : false, $gutters: 0);
+        }
+        button{
+            @include xy-cell(1, $gutter-output : false, $gutters: 0);
+            @include flex-align-self("stretch");
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@import 'node_modules/foundation-sites/scss/components/tabs';
+
+.woocommerce-tabs{
+    .wc-tabs {
+        @include tabs-container;
+        @include xy-grid;
+        @include flex-align($y: middle);
+        li{
+            @include tabs-title;
+            @include xy-cell-base("auto");
+            text-align: center;
+        }
+    }
+    .wc-tab {
+        @include tabs-content;
+        border-color: transparent;
+    }
+}

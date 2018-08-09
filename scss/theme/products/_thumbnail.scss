@@ -1,0 +1,105 @@
+$cerlce-size : 50px;
+$cerlce-padding : 5px;
+.products-thumbnail{
+    box-shadow: 0 3px 10px 5px rgba(121,121,121,0.05);
+    margin: 0;
+    background: $white-color;
+    position: relative;
+    height: 100%;
+    a{
+        color: #37474F;
+        font-size: rem-calc(12);
+        text-decoration: none;
+        &.woocommerce-loop-product__link {
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+    }
+    .title{
+        @include xy-cell(7, $gutter-output : false, $gutters: 0);
+        font-weight: 500;
+        margin: 0;
+    }
+    .price{
+        @include xy-cell(5, $gutter-output : false, $gutters: 0);
+        text-align: center;
+        color: $primary-color;
+        margin: 0 !important;
+        .amount{
+            display: block;
+        }
+    }
+    .colors{
+        @include xy-cell($gutter-output : false, $gutters: 0);
+    }
+
+    .brut{
+        padding: 15px;
+        img{
+            margin: 0 !important;
+        }
+        .sep{
+            border: 1px solid #ECEFF1;
+            margin: 15px 20px;
+        }
+        .sub{
+            @include xy-grid;
+            @include flex-align($y: middle);
+        }
+    }
+    .hover{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        .bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 45%;
+            background: rgba(76, 175, 80, 0.3);
+            .cercle{
+                $half-cercle-size:calc(50% - $cerlce-size/2); 
+                position: absolute;
+                top: 25%;
+                left: calc(50% - #{($cerlce-size/2)+$cerlce-padding});
+                height: $cerlce-size;
+                width: $cerlce-size;
+
+                font-size: rem-calc(10);
+                padding: $cerlce-padding;
+                font-style: italic;
+                background: $white-color;
+                text-align: center;
+                @include flex;
+                @include flex-align($y: middle);
+            }
+        }
+        .info{
+            position: absolute;
+            top: 55%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $white-color;
+            padding: 5px 10px;
+            @include xy-grid;
+            @include flex-align($y: middle);
+        }
+        .color{
+            font-size: rem-calc(10);
+            font-weight: 300;
+        }
+    }
+    &:hover{
+        .hover{
+            display: block;
+        }
+    }
+}

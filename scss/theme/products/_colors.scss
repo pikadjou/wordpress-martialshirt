@@ -1,0 +1,35 @@
+$color-palette : (
+    white: rgb(255,255,255),
+    black: rgb(0,0,0),
+    kelly: rgb(0, 122, 62),
+    heather-deep-teal: rgb(66, 98, 117),
+    brown: rgb(55, 45, 44),
+    sport-grey: rgb(155, 150, 156),
+    red: rgb(175, 1, 31),
+    carolina-blue: rgb(171, 186, 217),
+    light-pink: rgb(246, 206, 214),
+    military-green: rgb(86, 85, 67)
+);
+.color{
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    border: 1px solid black;
+    @each $name, $color in $color-palette {
+        &.#{$name}{
+            background: $color;
+        }
+        @each $subname, $subcolor in $color-palette {
+            &.#{$name}#{$subname}{
+                background: linear-gradient(90deg, $color 50%, $subcolor 50%);
+            }
+        }
+    }
+    
+   /* &.whitekelly{
+        background: linear-gradient(90deg, white 50%, rgb(0, 122, 62) 50%);
+    }
+    &.blackwhite{
+        background: linear-gradient(90deg, black 50%, white 50%);
+    }*/
+}

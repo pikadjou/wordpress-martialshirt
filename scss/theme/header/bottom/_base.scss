@@ -1,0 +1,17 @@
+.bottom-header-wrapper{
+    padding-bottom: 20px;
+    @include xy-grid;
+    @include flex-align($y: middle);
+    .blank{
+        @include xy-cell(3);
+    }
+    .search-wrapper{
+        @include xy-cell(5);
+    }
+    .user-wrapper{
+        @include xy-cell(2);
+    }
+    .cart-wrapper{
+        @include xy-cell(2);
+    }
+}
