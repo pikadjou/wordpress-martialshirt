@@ -25,7 +25,7 @@ get_header();
 	if( is_home() && !( is_front_page() ) ) {
 		$queried_id = get_option( 'page_for_posts' );
 	?>
-		<div class="page-header clearfix">
+		<div class="page-header">
 			<div class="tg-container">
 				<h2 class="entry-title"><?php echo get_the_title( $queried_id ); ?></h2>
 				<h3 class="entry-sub-title"><?php martialwc_breadcrumbs(); ?></h3>

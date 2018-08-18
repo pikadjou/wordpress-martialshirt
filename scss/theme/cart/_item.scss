@@ -1,33 +1,47 @@
-.woocommerce-mini-cart-item{
+.woocommerce-cart-item {
     padding: 15px;
     border-bottom: 1px solid #37474F;
     @include xy-grid;
+    @include flex-align($y: middle);
     & > .thumbnail, & > .thumbnail-link{
-        @include xy-cell(3);
+        @include xy-cell(2, $gutter-output : false, $gutters: 0);
         img{
             width: auto !important;
         }
     }
     .info{
-        @include xy-cell('auto');
+        @include xy-cell('auto', $gutter-output : false, $gutters: 0);
         @include xy-grid;
+        padding: 0 10px;
         .product-name{
-            @include xy-cell(9);
+            @include xy-cell(9, $gutter-output : false, $gutters: 0);
             font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .real-price{
+            @include xy-cell(3, $gutter-output : false, $gutters: 0);
+            text-align: right;
+            margin-bottom: 10px;
         }
         .unit-price{
             @include xy-cell(3, $gutter-output : false, $gutters: 0);
-            text-align: right;
+            text-align: center;
         }
         .meta-data{
-            @include xy-cell(4);
+            @include xy-cell(4, $gutter-output : false, $gutters: 0);
             font-size: rem-calc(12);
         }
-        .real-price{
-            @include xy-cell(3);
-        }
+        
         .quantity{
-            @include xy-cell('auto');
+            @include xy-cell('auto', $gutter-output : false, $gutters: 0);
+            text-align: center;
+
+            label{
+                display: none;
+            }
+            input{
+                text-align: center;
+            }
         }
     }
     

@@ -41,16 +41,25 @@ if ( 0 === sizeof( $crosssells ) ) {
 				<span class="key">
 					<?php esc_html_e( 'Subtotal', 'martialwc' ); ?>
 				</span>
-				<span class="value">
+				<span class="value price">
 					<?php wc_cart_totals_subtotal_html(); ?>
 				</span>
 			</div>
-			<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
-				<div class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
-					<span class="key"><?php wc_cart_totals_coupon_label( $coupon ); ?></span>
-					<span class="value"><td data-title="<?php wc_cart_totals_coupon_label( $coupon ); ?>"><?php wc_cart_totals_coupon_html( $coupon ); ?></span>
+			<?php if (count(WC()->cart->get_coupons()) > 0) : ?>
+				<div class="cart-discount">
+					<span class="key">
+						<?php esc_html_e( 'Coupon', 'martialwc' ); ?>
+					</span>
+					<span class="value">
+						<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+							<div class="coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+								<span class="key"><?php wc_cart_totals_coupon_label( $coupon ); ?></span>
+								<span class="value price"><?php wc_cart_totals_coupon_html( $coupon ); ?></span>
+							</div>
+						<?php endforeach; ?>
+					</span>
 				</div>
-			<?php endforeach; ?>
+			<?php endif; ?>
 
 			<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
 

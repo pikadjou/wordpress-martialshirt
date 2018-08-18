@@ -1,0 +1,15 @@
+.woocommerce-cart-form{
+    .woocommerce-cart-update{
+        padding: 10px;
+        text-align: right;
+    }
+    .coupon{
+        @include xy-grid;
+        .coupon-input{
+            @include xy-cell("auto", $gutter-output : false, $gutters: 0);
+        }
+        .coupon-validation{
+            @include xy-cell("auto", $gutter-output : false, $gutters: 0); 
+        }
+    }
+}

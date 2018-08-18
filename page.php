@@ -18,35 +18,39 @@ get_header();
 
 	do_action( 'martialwc_before_body_content' );
 
-	$martialwc_layout = martialwc_layout_class();
+	//$martialwc_layout = martialwc_layout_class();
 	?>
 	<div id="content" class="site-content"><!-- #content.site-content -->
-		<div class="page-header clearfix">
-			<div class="tg-container">
-				<?php the_title('<h2 class="entry-title">', '</h2>'); ?>
-				<h3 class="entry-sub-title"><?php martialwc_breadcrumbs(); ?></h3>
-			</div>
-		</div>
-		<main id="main" class="clearfix <?php echo esc_attr($martialwc_layout); ?>">
-			<div class="tg-container">
-				<div id="primary">
-					<?php
-					while ( have_posts() ) : the_post(); ?>
-
-						<?php get_template_part( 'template-parts/content', 'page' ); ?>
-
+		<main id="main">
+			<article id="article">
+				<div id="breadcrumb">
+					<h3><?php woocommerce_breadcrumb(); ?><h3>
+				</div>
+				<div class="page-header">
+					<div class="tg-container">
+						<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+					</div>
+				</div>
+				<div class="tg-container">
+					<div id="primary">
 						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
+						while ( have_posts() ) : the_post(); ?>
 
-						get_template_part('navigation', 'none');
+							<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-					endwhile; // End of the loop. ?>
-				</div> <!-- Primary end -->
-					<?php martialwc_sidebar_select(); ?>
-			</div>
+							<?php
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || get_comments_number() ) :
+								comments_template();
+							endif;
+
+							get_template_part('navigation', 'none');
+
+						endwhile; // End of the loop. ?>
+					</div> <!-- Primary end -->
+				</div>
+			</article>
+			<?php martialwc_sidebar_select(); ?>
 		</main>
 	</div>
 

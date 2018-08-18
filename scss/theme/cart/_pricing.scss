@@ -2,26 +2,49 @@
     h2.widget-title{
         display: none;
     }
+
     .shop_table{
-        padding: 20px;
         @include xy-grid;
+        @include flex-align($y: bottom);
         .key{
             font-weight: bold;
             margin-right: 10px;
         }
-        .value{
-
-        }
+        .value{ }
         .sub-info{
-            @include xy-cell("auto");
-            font-size: rem-calc(14);
+            @include xy-cell(7);
+            font-size: rem-calc(16);
         }
         .main-info{
             text-align: right;
             @include xy-cell("auto");
+            font-size: rem-calc(18);
+        }
+        .cart-discount, .shipping{
+            & > .value{
+                display: block;
+                padding-left: 10px;
+                font-size: rem-calc(14);
+                div {
+                    border-bottom: 1px dotted #ECEFF1;
+                }
+                
+            }
         }
     }
-    .checkout{
-        display: none;
+    
+    .widget_shopping_cart_content & {
+        .shop_table{
+            padding: 20px 10px;
+            .sub-info{
+                font-size: rem-calc(14);
+            }
+            .main-info{
+                font-size: rem-calc(16);
+            }
+        }
+        .checkout{
+            display: none;
+        }
     }
 }

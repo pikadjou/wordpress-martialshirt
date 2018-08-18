@@ -1,4 +1,13 @@
-.cart-validation{
+.cart_totals {
+    a.button{
+        @include flex;
+        justify-content: center;
+        margin: 0;
+        margin-top: 10px;
+    }
+}
+
+.cart-button{
     .woocommerce-mini-cart__buttons{
         @include flex;
     }
@@ -9,5 +18,4 @@
             display: none;
         }
     }
-    
 }

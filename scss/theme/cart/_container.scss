@@ -2,3 +2,20 @@
     background-color: $white-color;
     color: $black-color;
 }
+
+.woocommerce-cart-form{
+    .woocommerce-cart{
+        @include xy-grid;
+        .woocommerce-cart-items{
+            @include xy-cell(8);
+
+            .woocommerce-cart-update{
+                padding: 10px;
+                text-align: right;
+            }
+        }
+        .woocommerce-cart-validation{
+            @include xy-cell('auto');            
+        }
+    }
+}
