@@ -7,8 +7,8 @@
             @include flex-order(1);
         }
         #article{
-            //@include xy-cell-base(auto);
-            @include xy-cell(9);
+            @include xy-cell-base(auto);
+            //@include xy-cell(9);
             @include flex-order(2);
         }
     }

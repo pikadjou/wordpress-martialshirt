@@ -35,34 +35,38 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 	<div class="checkout-form-wrapper">
 
-		<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
+		<div class="details">
+			<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
 
-			<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+				<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-			<div class="col2-set" id="customer_details">
-				<div class="col-1">
-					<?php do_action( 'woocommerce_checkout_billing' ); ?>
+				<div id="customer_details">
+					<div class="col-1">
+						<?php do_action( 'woocommerce_checkout_billing' ); ?>
+					</div>
+
+					<div class="col-2">
+						<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+					</div>
 				</div>
 
-				<div class="col-2">
-					<?php do_action( 'woocommerce_checkout_shipping' ); ?>
-				</div>
+				<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+
+			<?php endif; ?>
+
+		</div>
+		
+		<div class="resume">
+			<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'martialwc' ); ?></h3>
+
+			<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+
+			<div id="order_review" class="woocommerce-checkout-review-order">
+				<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 			</div>
 
-			<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
-
-		<?php endif; ?>
-
-		<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'martialwc' ); ?></h3>
-
-		<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-
-		<div id="order_review" class="woocommerce-checkout-review-order">
-			<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+			<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 		</div>
-
-		<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-
 	</div>
 
 </form>

@@ -1,0 +1,33 @@
+.woocommerce-checkout {
+    .checkout-form-wrapper{
+        @include xy-grid();
+        .details{
+            @include xy-cell(6);
+        }
+        .resume{
+            @include xy-cell("auto");
+            .woocommerce-checkout-review-order{
+                .shipping{
+                    border-bottom: 1px dotted #ECEFF1;
+                }
+                .woocommerce-checkout-review-order-table{
+                    border-bottom: 1px dotted #ECEFF1;
+                }
+            }
+        }
+    }
+
+    .woocommerce-checkout-review-order-table{
+        .row, .shipping {
+            @include xy-grid();
+            .key{
+                @include xy-cell('auto');
+                text-align: center;
+            }
+            .value{
+                @include xy-cell('auto');
+                text-align: center;
+            }
+        }
+    }
+}
